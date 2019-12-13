@@ -25,5 +25,12 @@
 		<action name="form1" class="cn.form.Form1DemoAction"></action>
 		<action name="form2" class="cn.form.Form2DemoAction"></action>
 		<action name="form4" class="cn.form.Form4DemoAction"></action>
+		
+		<action name="data1" class="cn.data.DataDemo1Action"></action>
+		<action name="data2" class="cn.data.DataDemo2Action"></action>
+		<action name="data3" class="cn.data.DataDemo3Action"></action>
+		
+		<action name="list" class="cn.data.ListAction"></action>
+		<action name="map" class="cn.data.MapAction"></action>
 	</package>
 </struts>
