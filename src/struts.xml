@@ -3,34 +3,27 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
-
-<!-- 	<package name="hellodemo" namespace="/" extends="struts-default">
-		<action name="hello" class="cn.action.HelloAction">
-		配置方法的返回值到页面
-			<result name="ok">/hello.jsp</result>
+		
+	<package name="demo1" namespace="/" extends="struts-default">
+		<!-- 全局结果页面配置 -->
+		<global-results>
+			<result name="success" type="redirect">/hello.jsp</result>
+		</global-results>
+		
+		<action name="book" class="cn.action.BookAction">
+			<!-- <result name="success" type="dispatcher">/world.jsp</result> -->
+			<!-- action访问名称 -->
+			<result name="success" type="redirectAction">orders</result>
 		</action>
-	</package> -->
+		
+		<action name="orders" class="cn.action.OrdersAction">
+			<!-- <result name="success">/hello.jsp</result> -->
+		</action>
+	</package>
 	
-	<!-- 引入hello.xml配置文件 -->
-	<!-- <include file="hello.xml"></include> -->
-
-	<!-- 配置action中method属性的方式访问 -->
-	<!-- <package name="methoddemo" namespace="/" extends="struts-default">
-	有method属性：写要执行的方法的名称
-		<action name="addAction" class="cn.method.BookAction" method="add"></action>
-		<action name="updateAction" class="cn.method.BookAction" method="update"></action>
-	</package> -->
-	
-	<!-- 通过通配符的方式实现 -->
-	<package name="methoddemo" namespace="/" extends="struts-default">
-	<!-- 
-		name属性值里面写*
-		(1)执行action里面的add方法，访问book_add
-		(2)执行action里面的update方法，访问book_update
-		上面两个路径使用book_*都可以实现
-		method属性写*值
-	 -->
-		<action name="book_*" class="cn.method.BookAction" method="{1}"></action>
+	<package name="demo2" namespace="/" extends="struts-default">
+		<action name="form1" class="cn.form.Form1DemoAction"></action>
+		<action name="form2" class="cn.form.Form2DemoAction"></action>
+		<action name="form4" class="cn.form.Form4DemoAction"></action>
 	</package>
 </struts>
